@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+:root {
+  --primary   : #d81e5b;
+  --dark      : #0c181c;
+  --light     : #416864;
+  --light-blue: #4fa8fb;
+  --orange    : #ffbf75;
+  --violet    : #b93af8;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin     : 0;
+  padding    : 0;
+  box-sizing : border-box;
+  font-family: 'Fira Sans', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: var(--light);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+
+.App-calculadora {
+  display        : flex;
+  min-height     : 100vh;
+  align-items    : center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding        : 16px;
 }
 
-.App-link {
-  color: #61dafb;
+.calculadora {
+  width        : 100%;
+  max-width    : 400px;
+  border-radius: 16px;
+  overflow     : hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.display {
+  padding         : 16px;
+  text-align      : right;
+  background-color: var(--dark);
+  color           : var(--primary);
+  font-size       : 24px;
+  font-weight     : 300;
+}
+
+.display-history {
+  text-align      : left;
+  background-color: var(--orange);
+  color           : var(--dark);
+  font-size       : 24px;
+  font-weight     : 200;
+  overflow-y      : scroll;
+  height          : 335px;
+  width           : 210px;
+  border-style    : solid;
+  border-radius   : 16px;
+}
+
+.titulo {
+  text-align: center;
+  color     : yellow;
+}
+
+.design {
+  color         : var(--violet);
+  text-align    : left;
+  padding-bottom: 10px;
+}
+
+
+
+button {
+  appearance: none;
+  border    : none;
+  outline   : none;
+  color     : yellow;
+  font-size : 20PX;
+  padding   : 16PX;
+  cursor    : pointer;
+  transition: 0.7s;
+}
+
+button:hover {
+  color  : yellow;
+  opacity: 0.5;
+}
+
+.operators {
+  display: flex;
+}
+
+.operators button {
+  flex            : 1 1 0%;
+  background-color: var(--light-blue);
+  font-weight     : 700;
+}
+
+.digits {
+  display  : flex;
+  flex-wrap: wrap;
+}
+
+.digits button {
+  flex            : 1 1 33.333%;
+  max-width       : 33.333%;
+  background-color: var(--primary);
 }
